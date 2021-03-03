@@ -7,10 +7,7 @@
 // Put the assignment code here
 
 class Quaternion{
-  double coeffour;
-  double coefthree;
-  double coeftwo;
-  double coefone;
+  double coeffour, coeftwo, coefthree, coefone;
 public:
   Quaternion(double a, double b, double c, double d){
     coefone = a;
@@ -44,26 +41,7 @@ public:
     return multi;
   }
   bool operator==(const Quaternion& z)const{
-    if (this->coefone == z.coefone){
-      if (this->coeftwo == z.coeftwo){
-        if (this->coefthree == z.coefthree){
-          if (this->coeffour == z.coeffour){
-            return true;
-          }
-          else{
-            return false;
-          }
-        }
-        else{
-          return false;
-        }
-      }else{
-        return false;
-      }
-    }
-    else{
-      return false;
-    }
+    return (coefone == z.coefone) && (coeftwo == z.coeftwo) && (coefthree == z.coefthree) && (coeffour == z.coeffour);
   }
 };
 
